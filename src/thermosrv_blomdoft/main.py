@@ -27,7 +27,7 @@ async def main():
 
     LOG.info("Initializing Measures and Scanner")
 
-    Measures().set_store(MeasuresSQLitePersister("./measures.db"))
+    Measures().set_store(MeasuresSQLitePersister("../../measures.db"))
     Measures().load()
     scanner = BleakScanner()
     scanner.register_detection_callback(detection_callback)
