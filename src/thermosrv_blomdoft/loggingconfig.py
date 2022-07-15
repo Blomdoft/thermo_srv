@@ -24,6 +24,10 @@ log_config = {
             "level": "INFO",
             "handlers": ["console", "file"]
         },
+        "MeasureServer": {
+            "level": "INFO",
+            "handlers": ["console", "file"]
+        },
         "Main": {
             "level": "INFO",
             "handlers": ["console", "file"]

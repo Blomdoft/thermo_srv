@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Temperatures</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <style>
+    body {background-color: powderblue;}
+    .row {
+      border:2px;
+      border-style:solid;
+      border-color:#000000;
+      padding: 5px;
+      margin: 5px;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .column {
+      float: left;
+      width: 33.33%;
+    }
+    .fancy {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+</style>
+  </head>
+  <body>
+
+    <!-- block -->
+    <div class="row">
+      <div class="column" align="left">{name}</div>
+      <div class="column fancy" align="center">{temperature} &#8451;</div>
+      <div class="column" align="right">{timestamp}</div>
+    </div>
+    <!-- end_block -->
+
+  </body>
+</html>

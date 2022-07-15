@@ -6,6 +6,10 @@ import logging
 from bleak import BleakScanner
 from Measures import Measures
 from MeasuresSQLitePersister import MeasuresSQLitePersister
+from MeasuresServer import MeasuresServer
+
+host_name = "localhost"
+server_port = 8090
 
 LOG = logging.getLogger("Main")
 
@@ -16,7 +20,7 @@ def detection_callback(device, advertisement_data):
 
     if advertisement_data.local_name is not None and advertisement_data.local_name.startswith("ATC"):
         data_str = list(advertisement_data.service_data.values())[0]
-        name = advertisement_data.local_name
+        name = "ATC_" + device.address[-6:]
         temp = int.from_bytes(data_str[6:8], "big", signed=True) / 10
         hum = data_str[8]
         Measures().add_measure(name, temp, hum)
@@ -27,10 +31,14 @@ async def main():
 
     LOG.info("Initializing Measures and Scanner")
 
-    Measures().set_store(MeasuresSQLitePersister("../../measures.db"))
+    Measures().set_store(MeasuresSQLitePersister("./measures.db"))
     Measures().load()
     scanner = BleakScanner()
     scanner.register_detection_callback(detection_callback)
+
+    server = MeasuresServer(host_name, server_port)
+    server.run_server_async()
+
 
     try:
         while True:

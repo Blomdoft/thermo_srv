@@ -21,6 +21,7 @@ class Measure(object):
         self.timestamp = timestamp
         self.temperature = temperature
         self.humidity = humidity
+        self.readable_name = name
 
     def __str__(self):
         return "Measure (name: " + self.name + ", timestamp: " + str(self.timestamp) + ", temp: "\

@@ -80,8 +80,10 @@ class MeasuresSQLitePersister(MeasureStoreInterface):
         c.execute(sql_get_latest_timestamp)
         latest_timestamp = datetime.min
         if c.arraysize > 0:
-            latest_timestamp = datetime.strptime(c.fetchone()[0],
-                                                 '%Y-%m-%d %H:%M:%S.%f')
+            dbdate = c.fetchone()[0]
+            if dbdate is not None:
+                latest_timestamp = datetime.strptime(dbdate,
+                                                     '%Y-%m-%d %H:%M:%S.%f')
         LOG.info("Last timestamp on database " + latest_timestamp.strftime("%d-%b-%Y (%H:%M:%S.%f)"))
 
         measures_to_save = []
