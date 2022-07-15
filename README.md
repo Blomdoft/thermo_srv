@@ -7,8 +7,7 @@ It gathers the advertisement data from surrounding ATC Xiaomi Thermometers, whic
 BLE is done via bleak
 Storage is a SQLite database
 
-Code is not cleaned up, and without a Webserver it is nearly useless. But I have to care for other projects at the moment so will get back to this later.
-Maybe it is a starting point for someone doing something serious.
+Code is not cleaned up, but it now has a little webserver build in. Need to configure that correctly before it is actually useful
 
 No license, do whatever you want.
 
