@@ -8,7 +8,7 @@ from Measures import Measures
 from MeasuresSQLitePersister import MeasuresSQLitePersister
 from MeasuresServer import MeasuresServer
 
-host_name = "localhost"
+host_name = "0.0.0.0"
 server_port = 8090
 
 LOG = logging.getLogger("Main")
