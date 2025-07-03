@@ -6,7 +6,7 @@ log_config = {
         "console": {
             "formatter": "std_out",
             "class": "logging.StreamHandler",
-            "level": "INFO"
+            "level": "ERROR"
         },
         "file": {
             "formatter": "std_out",
@@ -17,19 +17,19 @@ log_config = {
     },
     "loggers": {
         "Measures": {
-            "level": "INFO",
+            "level": "ERROR",
             "handlers": ["console", "file"]
         },
         "MeasuresSQLPersister": {
-            "level": "INFO",
+            "level": "ERROR",
             "handlers": ["console", "file"]
         },
         "MeasureServer": {
-            "level": "INFO",
+            "level": "ERROR",
             "handlers": ["console", "file"]
         },
         "Main": {
-            "level": "INFO",
+            "level": "ERROR",
             "handlers": ["console", "file"]
         }
     },

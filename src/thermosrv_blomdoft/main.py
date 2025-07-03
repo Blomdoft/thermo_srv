@@ -33,7 +33,7 @@ async def main():
 
     Measures().set_store(MeasuresSQLitePersister("./measures.db"))
     Measures().load()
-    scanner = BleakScanner()
+    scanner = BleakScanner(adapter="hci1")
     scanner.register_detection_callback(detection_callback)
 
     server = MeasuresServer(host_name, server_port)

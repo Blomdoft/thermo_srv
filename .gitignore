@@ -1,4 +1,6 @@
 .idea
 measures.db
 measures.log
+src/thermosrv_blomdoft/__pycache__/
+nohup.out
 

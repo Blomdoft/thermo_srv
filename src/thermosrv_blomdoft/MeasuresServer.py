@@ -40,6 +40,7 @@ class MeasuresServerHandler(BaseHTTPRequestHandler):
 
                 middle = block.replace("{name}", name).\
                     replace("{temperature}", str(measure.temperature)).\
+                    replace("{humidity}", str(measure.humidity)).\
                     replace("{timestamp}", str(measure.timestamp)[:-7])
                 result_aggregation = result_aggregation + middle
 
